@@ -17,11 +17,6 @@ namespace Business.Concrete
             _carDal = carDal;
         }
 
-        public CarManager(object p)
-        {
-            this.p = p;
-        }
-
         public List<Car> GetAll()
         {
             return _carDal.GetAll();
