@@ -21,14 +21,14 @@ namespace Business.Concrete
             return _carDal.GetAll();
         }
 
-        public List<Car> GetAllByColorId(int ıd)
+        public List<Car> GetAllByColorId(int colorId)
         {
-            return _carDal.GetAll(c => c.ColorId == ıd);
+            return _carDal.GetAll(c => c.ColorId == colorId);
         }
 
-        public List<Car> GetAllByBrandId(int ıd)
+        public List<Car> GetAllByBrandId(int brandId)
         {
-            return _carDal.GetAll(c => c.BrandId == ıd);
+            return _carDal.GetAll(c => c.BrandId == brandId);
         }
 
         /*public List<Car> GetAllByCarName(string minname)
@@ -43,10 +43,7 @@ namespace Business.Concrete
 
         public void Add(Car car)
         {
-            if (car.CarName.Length > 2 && car.DailyPrice > 0)
-                _carDal.Add(car);
-            else
-                Console.WriteLine("Eklenemedi");
+            _carDal.Add(car);
         }
 
         public void Delete(Car car)
