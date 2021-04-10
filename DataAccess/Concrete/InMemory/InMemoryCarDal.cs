@@ -1,5 +1,6 @@
 ﻿using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,6 +56,11 @@ namespace DataAccess.Concrete.InMemory
         {
             return _cars.Where(p => p.CarId == carId).ToList(); //where içinde bulunan şarta uyan tüm elemanları liste yapıp döndürür
             //where=foreach
+        }
+
+        public List<CarDetailDto> GetCarDetails()
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(Car car)
