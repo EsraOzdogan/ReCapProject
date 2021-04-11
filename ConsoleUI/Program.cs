@@ -21,25 +21,25 @@ namespace ConsoleUI
 
         private static void DtoTest()
         {
-            var carManager = new CarManager(new EfCarDal());
+           /* var carManager = new CarManager(new EfCarDal());
             foreach (var car in carManager.GetCarDetails())
             {
                 Console.WriteLine(car.CarName + "  " + car.BrandName + "  " + car.ColorName + "  " + car.DailyPrice);
-            }
+            }*/
         }
 
         private static void ColorTest()
         {
-            ColorManager colorManager = new ColorManager(new EfColorDal());
+           /* ColorManager colorManager = new ColorManager(new EfColorDal());
             foreach (var color in colorManager.GetAll())
             {
                 Console.WriteLine(color.Id);
-            }
+            }*/
         }
 
         private static void CarTest()
         {
-            CarManager carManager = new CarManager(new EfCarDal());
+            //CarManager carManager = new CarManager(new EfCarDal());
 
             /*foreach (var product in productManager.GetAll())
             {
@@ -56,10 +56,24 @@ namespace ConsoleUI
             }*/
 
 
-            foreach (var car in carManager.GetAllByColorId(4))
+            /* foreach (var car in carManager.GetAllByColorId(4))
+             {
+                 Console.WriteLine(car.Description);
+                 carManager.Add(car);
+             }*/
+            CarManager carManager = new CarManager(new EfCarDal());
+            var result = carManager.GetCarDetails();
+            if (result.Success == true)
             {
-                Console.WriteLine(car.Description);
-                carManager.Add(car);
+                foreach (var product in result.Data)
+                {
+                    Console.WriteLine(product.CarName + "/" + product.BrandName); //yani join oldu
+                }
+
+            }
+            else
+            {
+                Console.WriteLine(result.Message);
             }
         }
     }
