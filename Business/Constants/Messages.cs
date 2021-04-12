@@ -22,15 +22,17 @@ namespace Business.Constants
         public static string BrandDeleted = "Brand deleted";
         public static string BrandUpdated = "Brand updated";
         public static string CarDailyPriceInvalid = " Car daily price is invalid";
-
-
-
-
-
-
-
-
-
-
+        internal static string CustomerAdded;
+        internal static string CustomerdDeleted;
+        internal static string CustomerUpdated;
+        internal static string RentalAdded;
+        internal static string RentalDeleted;
+        internal static string RentalUpdated;
+        internal static string UserAdded;
+        internal static string UserDeleted;
+        internal static string UserUpdated;
+        internal static string CustomersListed;
+        internal static string RentalsListed;
+        internal static string UsersListed;
     }
 }
