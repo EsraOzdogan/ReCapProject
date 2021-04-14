@@ -16,6 +16,17 @@ namespace Business.Concrete
         {
             _userDal = userDal;
         }
+      
+
+        public IDataResult<List<User>> GetAll()
+        {
+            return new SuccessDataResult<List<User>>(_userDal.GetAll(), Messages.UsersListed);
+        }
+        public IDataResult<User> GetById(int id)
+        {
+            return new SuccessDataResult<User>(_userDal.Get(u => u.Id == id));
+
+        }
         public IResult Add(User user)
         {
             _userDal.Add(user);
@@ -28,17 +39,6 @@ namespace Business.Concrete
             _userDal.Delete(user);
             return new SuccessResult(Messages.UserDeleted);
         }
-
-        public IDataResult<List<User>> GetAll()
-        {
-            return new SuccessDataResult<List<User>>(_userDal.GetAll(), Messages.UsersListed);
-        }
-
-        public IDataResult<List<User>> GetAllById(int ıd)
-        {
-            return new SuccessDataResult<List<User>>(_userDal.GetAll(u => u.Id == ıd));
-        }
-
         public IResult Update(User user)
         {
             _userDal.Update(user);

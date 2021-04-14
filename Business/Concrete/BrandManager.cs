@@ -24,13 +24,11 @@ namespace Business.Concrete
 
         }
 
-        public IDataResult<List<Brand>> GetAllByBrandId(int ıd)
+
+        public IDataResult<Brand> GetById(int id)
         {
-            //return _brandDal.GetAll(b => b.Id == ıd);
-            return new SuccessDataResult<List<Brand>>(_brandDal.GetAll(b => b.Id == ıd));
-
+            return new SuccessDataResult<Brand>(_brandDal.Get(b => b.Id == id));
         }
-
 
         public IResult Add(Brand brand)
         {
@@ -51,5 +49,7 @@ namespace Business.Concrete
 
 
         }
+
+      
     }
 }

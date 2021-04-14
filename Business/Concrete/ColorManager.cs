@@ -28,10 +28,9 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Color>>(_colorDal.GetAll(), Messages.ColorsListed);
         }
 
-        public IDataResult<List<Color>> GetAllByColorId(int ıd)
+        public IDataResult<Color> GetById(int id)
         {
-            //return _colorDal.GetAll(c => c.Id == ıd);
-            return new SuccessDataResult<List<Color>>(_colorDal.GetAll(c => c.Id == ıd));// her p için pnin categorydsi benım categoryıdme(ıd) eşitse filtrele
+            return new SuccessDataResult<Color>(_colorDal.Get(c => c.Id == id));
 
         }
 
