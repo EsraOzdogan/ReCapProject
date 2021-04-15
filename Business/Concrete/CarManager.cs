@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.CrossCuttingConcerns.Validation.FluentValidation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -72,6 +74,8 @@ namespace Business.Concrete
             //    //magic strings, hep aynı string
             //    return new ErrorResult(Messages.CarNameInvalid);
             //}
+            ValidationTools.Validate(new CarValidator(), car);
+
             _carDal.Add(car);
             return new SuccessResult(Messages.CarAddded);
         }
