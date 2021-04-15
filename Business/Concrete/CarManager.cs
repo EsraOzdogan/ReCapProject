@@ -56,22 +56,22 @@ namespace Business.Concrete
         {
             //iş kodları
             //Yetkisi var mı?
-            if (min<0)
-            {
-                return new ErrorDataResult<List<Car>>(Messages.CarDailyPriceInvalid);
+            //if (min<0)
+            //{
+            //    return new ErrorDataResult<List<Car>>(Messages.CarDailyPriceInvalid);
 
-            }
+            //}
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(), Messages.CarsListed);
         }
 
         public IResult Add(Car car)
         {
             // _carDal.Add(car);
-            if (car.CarName.Length < 2)
-            {
-                //magic strings, hep aynı string
-                return new ErrorResult(Messages.CarNameInvalid);
-            }
+            //if (car.CarName.Length < 2)
+            //{
+            //    //magic strings, hep aynı string
+            //    return new ErrorResult(Messages.CarNameInvalid);
+            //}
             _carDal.Add(car);
             return new SuccessResult(Messages.CarAddded);
         }
