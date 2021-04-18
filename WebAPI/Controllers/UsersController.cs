@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Entities.Concrete;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -20,7 +21,7 @@ namespace WebAPI.Controllers
             _userService = userService;
         }
 
-        [HttpGet("getbyid")]
+        /*[HttpGet("getbyid")]
         public IActionResult GetById(int id)
         {
             var result = _userService.GetById(id);
@@ -37,7 +38,7 @@ namespace WebAPI.Controllers
 
             return BadRequest(result);
         }
-
+        */
         /*[HttpGet("getuserdetailbymail")]
         public IActionResult GetUserDetailByMail(string userMail)
         {
@@ -47,7 +48,7 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }*/
 
-        [HttpPost("update")]
+       /* [HttpPost("update")]
         public IActionResult Update(User user)
         {
             var result = _userService.Update(user);
@@ -55,7 +56,7 @@ namespace WebAPI.Controllers
 
             return BadRequest(result);
         }
-
+       */
         /*[HttpPost("updateuserdetails")]
         public IActionResult UpdateUserDetails(UserDetailForUpdateDto userDetailForUpdate)
         {
@@ -65,13 +66,13 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
         */
-        [HttpPost("delete")]
+       /* [HttpPost("delete")]
         public IActionResult Delete(User user)
         {
             var result = _userService.Delete(user);
             if (result.Success) return Ok(result);
 
             return BadRequest(result);
-        }
+        }*/
     }
 }

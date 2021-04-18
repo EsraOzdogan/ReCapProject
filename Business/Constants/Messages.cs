@@ -34,5 +34,23 @@ namespace Business.Constants
         public static string CustomersListed= "Customers listed";
         public static string RentalsListed = "Rentals listed";
         public static string UsersListed = "Users listed";
+        public static string CarImageCountOfCarError;
+        public static string CarImageAdded = "Car image added";
+        public static string CarImageUpdated = "Car image updated";
+        public static string CarImageDeleted= "Car image deleted";
+        public static string AuthorizationDenied = "Authorization denied";
+        public static string UserRegistered = "User registered";
+        public static string UserNotFound = "User not found";
+        public static string PasswordError = "Password error";
+        public static string SuccessfulLogin = "Successful login";
+        public static string UserAlreadyExists = "User already exists";
+        public static string AccessTokenCreated = "Access token created";
+        public static string OperationClaim = "Access token created";
+        public static string UserOperationClaimUpdated = "Access token created";
+        public static string UserOperationClaimAdded = "Access token created";
+        public static string UserOperationClaimDeleted = "Access token created";
+        public static string OperationClaimUpdated = "Access token created";
+        public static string OperationClaimDeleted = "Access token created";
+        public static string OperationClaimAdded = "Access token created";
     }
 }
