@@ -9,7 +9,7 @@ using System.Text;
 
 namespace DataAccess.Concrete.InMemory
 {
-    public class InMemoryCarDal : ICarDal
+  /*  public class InMemoryCarDal : ICarDal
     {
         List<Car> _cars;  //Global değişkenler _ ile tanımlanır
         //constructor void vs yok direkt class isimli
@@ -63,6 +63,11 @@ namespace DataAccess.Concrete.InMemory
             throw new NotImplementedException();
         }
 
+        public List<CarDetailDto> GetCarDetails(Expression<Func<CarDetailDto, bool>> filter = null)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(Car car)
         {
             Car carToUpdate = _cars.SingleOrDefault(p => p.CarId == car.CarId);
@@ -74,5 +79,5 @@ namespace DataAccess.Concrete.InMemory
 
 
         }
-    }
+    }*/
 }

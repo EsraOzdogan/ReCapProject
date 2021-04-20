@@ -7,6 +7,8 @@ namespace Business.Constants
 {
     public static class Messages //sürekli newlememek için static yazıyoruz
     {
+        public static  string creditCardDeleted = "Credit card deleted";
+        public static  string creditCardAdded = "Credit card added";
         public static string CarAddded = "Car added";
         public static string CarNameInvalid = "Car name is invalid";
         public static string MaintenanceTime= "System is under maintenance";
@@ -52,5 +54,16 @@ namespace Business.Constants
         public static string OperationClaimUpdated = "Access token created";
         public static string OperationClaimDeleted = "Access token created";
         public static string OperationClaimAdded = "Access token created";
+        public static string CustomerDeleted = "Customer deleted";
+        public static string FindeksAdded = "Findeks added";
+        public static string FindeksDeleted = "Findeks deleted";
+        public static string FindeksUpdated = "Findeks updated";
+        public static string FindeksNotFound = "Findeks not found";
+        public static string PaymentFailed = "Payment failed";
+        public static string PaymentSuccessful = "Payment successful";
+        public static string RentalUndeliveredCar = " Renta undelivered car";
+        public static string RentalNotAvailable = "Rental not available";
+        public static string FindeksNotEnoughForCar = "Findeks not enough for car";
+        public static string UserDetailsUpdated = "User details updated";
     }
 }

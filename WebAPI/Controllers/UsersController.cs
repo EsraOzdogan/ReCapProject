@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using Core.Entities.Concrete;
 using Entities.Concrete;
+using Entities.DTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,7 +13,7 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsersController : ControllerBase
+    public class UsersController : Controller
     {
         private readonly IUserService _userService;
 
@@ -21,7 +22,7 @@ namespace WebAPI.Controllers
             _userService = userService;
         }
 
-        /*[HttpGet("getbyid")]
+        [HttpGet("getbyid")]
         public IActionResult GetById(int id)
         {
             var result = _userService.GetById(id);
@@ -38,17 +39,17 @@ namespace WebAPI.Controllers
 
             return BadRequest(result);
         }
-        */
-        /*[HttpGet("getuserdetailbymail")]
+
+        [HttpGet("getuserdetailbymail")]
         public IActionResult GetUserDetailByMail(string userMail)
         {
             var result = _userService.GetUserDetailByMail(userMail);
             if (result.Success) return Ok(result);
 
             return BadRequest(result);
-        }*/
+        }
 
-       /* [HttpPost("update")]
+        [HttpPost("update")]
         public IActionResult Update(User user)
         {
             var result = _userService.Update(user);
@@ -56,8 +57,8 @@ namespace WebAPI.Controllers
 
             return BadRequest(result);
         }
-       */
-        /*[HttpPost("updateuserdetails")]
+
+        [HttpPost("updateuserdetails")]
         public IActionResult UpdateUserDetails(UserDetailForUpdateDto userDetailForUpdate)
         {
             var result = _userService.UpdateUserDetails(userDetailForUpdate);
@@ -65,14 +66,14 @@ namespace WebAPI.Controllers
 
             return BadRequest(result);
         }
-        */
-       /* [HttpPost("delete")]
+
+        [HttpPost("delete")]
         public IActionResult Delete(User user)
         {
             var result = _userService.Delete(user);
             if (result.Success) return Ok(result);
 
             return BadRequest(result);
-        }*/
+        }
     }
 }

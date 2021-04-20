@@ -1,16 +1,17 @@
-﻿using Business.Abstract;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constants;
+using Core.Aspects.Autofac.Caching;
 using Core.Utilities.Business;
 using Core.Utilities.FileSystems;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace Business.Concrete
 {
@@ -23,7 +24,7 @@ namespace Business.Concrete
             _carImageDal = carImageDal;
         }
 
-       // [CacheAspect]
+        [CacheAspect]
         public IDataResult<CarImage> GetById(int id)
         {
             var result = _carImageDal.Get(c => c.Id == id);
@@ -33,13 +34,13 @@ namespace Business.Concrete
             return new SuccessDataResult<CarImage>(result);
         }
 
-       // [SecuredOperation("carimage.getall,moderator,admin")]
+        [SecuredOperation("carimage.getall,moderator,admin")]
         public IDataResult<List<CarImage>> GetAll()
         {
             return new SuccessDataResult<List<CarImage>>(_carImageDal.GetAll());
         }
 
-       // [CacheAspect]
+       [CacheAspect]
         public IDataResult<List<CarImage>> GetImagesByCarId(int carId)
         {
             var result = _carImageDal.GetAll(c => c.CarId == carId);
@@ -49,8 +50,8 @@ namespace Business.Concrete
             return new SuccessDataResult<List<CarImage>>(result);
         }
 
-        //[SecuredOperation("carimage.add,moderator,admin")]
-        //[CacheRemoveAspect("ICarImageService.Get")]
+        [SecuredOperation("carimage.add,moderator,admin")]
+        [CacheRemoveAspect("ICarImageService.Get")]
         public IResult Add(CarImage carImage, IFormFile file)
         {
             var result = BusinessRules.Run(
@@ -64,8 +65,8 @@ namespace Business.Concrete
             return new SuccessResult(Messages.CarImageAdded);
         }
 
-        //[SecuredOperation("carimage.update,moderator,admin")]
-        //[CacheRemoveAspect("ICarImageService.Get")]
+        [SecuredOperation("carimage.update,moderator,admin")]
+        [CacheRemoveAspect("ICarImageService.Get")]
         public IResult Update(CarImage carImage, IFormFile file)
         {
             var carImageToUpdate = _carImageDal.Get(c => c.Id == carImage.Id);
@@ -77,8 +78,8 @@ namespace Business.Concrete
             return new SuccessResult(Messages.CarImageUpdated);
         }
 
-        //[SecuredOperation("carimage.delete,moderator,admin")]
-        //[CacheRemoveAspect("ICarImageService.Get")]
+        [SecuredOperation("carimage.delete,moderator,admin")]
+        [CacheRemoveAspect("ICarImageService.Get")]
         public IResult Delete(CarImage carImage)
         {
             new FileManagerOnDisk().Delete(carImage.ImagePath);
@@ -102,7 +103,7 @@ namespace Business.Concrete
             var defaultCarImage = new CarImage
             {
                 ImagePath =
-                    $@"{Environment.CurrentDirectory}\Public\Images\CarImage\logo.jpg",
+                    $@"{Environment.CurrentDirectory}\Public\Images\CarImage\default.jpg",
                 Date = DateTime.Now
             };
 

@@ -7,6 +7,7 @@ using Core.Entities.Concrete;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
+using Entities.DTOs;
 //using Remotion.Linq.Parsing.Structure.IntermediateModel;
 
 namespace DataAccess.Concrete.EntityFramework
@@ -26,8 +27,7 @@ namespace DataAccess.Concrete.EntityFramework
 
             }
         }
-
-        /*public UserDetailDto GetUserDetail(string userMail)
+        public UserDetailDto GetUserDetail(string userMail)
         {
             using (var context = new ReCapProjectContext())
             {
@@ -47,6 +47,6 @@ namespace DataAccess.Concrete.EntityFramework
                      }).First();
                 return result;
             }
-        }*/
+        }
     }
 }
