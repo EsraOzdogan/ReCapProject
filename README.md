@@ -8,7 +8,6 @@
 <br />
 <p align="center">
   <a href="https://github.com/EsraOzdogan/ReCapProject">
-    <img src="https://user-images.githubusercontent.com/53148314/110218503-2f2ef700-7ecb-11eb-9753-6f760c72511e.png" alt="ReCap Project">
   </a>
   <h2 align="center">ReCapProject</h2>
   <p align="center">
@@ -337,8 +336,8 @@ Web API Layer that opens the business layer to the internet.
 
 | Name            | Data Type     | Allow Nulls | Default |
 | :-------------- | :------------ | :---------- | :------ |
-| Id              | int           | False       |         |
-| Name            | nvarchar(50)  | False       |         |
+| CarId              | int           | False       |         |
+| CarName            | nvarchar(50)  | False       |         |
 | BrandId         | int           | False       |         |
 | ColorId         | int           | False       |         |
 | DailyPrice      | decimal(18,0) | False       |         |
@@ -439,7 +438,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 # Contact
 
-Ahmet ÇETİNKAYA - [EsraOzdogan.info](https://EsraOzdogan.info/)
+Esra ÖZDOĞAN - [EsraOzdogan.github.io](https://esraozdogan.github.io/)
 
 Project Link: [https://github.com/EsraOzdogan/ReCapProject](https://github.com/EsraOzdogan/ReCapProject)
 
